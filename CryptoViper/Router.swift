@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+// Class, Protocol
+// Entry Point
+
+protocol AnyRouter {
+    static func startExecution() -> AnyRouter
+}
+
+class CrypoRouter: AnyRouter {
+    static func startExecution() -> any AnyRouter {
+        let router = CrypoRouter()
+        return router
+    }
+}
