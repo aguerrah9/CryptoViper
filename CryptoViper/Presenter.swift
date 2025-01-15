@@ -28,7 +28,9 @@ class CryptoPresenter: AnyPresenter {
     
     var interactor: (any AnyInteractor)? {
         didSet {
-            interactor?.downloadCryptos()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.interactor?.downloadCryptos()
+            }
         }
     }
     
